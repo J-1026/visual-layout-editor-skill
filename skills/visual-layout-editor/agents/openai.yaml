@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Layout Editor"
+  short_description: "Drag, align and save layouts in your current frontend project"
+  default_prompt: "Use $visual-layout-editor to add drag, element alignment, layer ordering, save and re-edit controls to my selected region in the current development project. Open its preview and use my language for the editor."
