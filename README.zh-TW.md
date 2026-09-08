@@ -21,19 +21,33 @@
 
 ## 以 SkillGuide 首頁為例
 
-[![SkillGuide 首頁：元素編輯虛線框與桌面版面控制面板](media/homepage-desktop.png)](media/homepage-desktop.png)
+[![目前 SkillGuide 首頁整合真實版面編輯器，標題拖曳後的實際介面](media/homepage-desktop-drag.jpg)](media/homepage-desktop-drag.jpg)
 
-**桌面端：直接調整首頁。** 首屏標題、副標題、按鈕與裝飾元素都顯示編輯框。右側面板提供**固定目前版面、複製座標、還原預設**；背景網格用於對齊參考。[開啟原始截圖](media/homepage-desktop.png)。
+**桌面端：直接移動目前首頁標題。** 圖中標題透過真實滑鼠操作**向右、向下各移動10 px**，選框與面板座標同步變化。導覽、字型、玻璃動畫及按鈕均來自目前開發頁面。
 
-### 行動版：在390 × 844畫布中置中
+<details>
+<summary>標題置中，再固定儲存與再次編輯</summary>
 
-<p align="center">
-  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide 首頁390×844手機畫布，面板提供水平置中與固定目前版面" width="420"></a>
+![目前首頁標題水平置中後的真實介面](media/homepage-desktop-align.jpg)
+
+**水平置中：** 實測中軸偏差變為 **0 px**，縱向位移維持10 px。
+
+![目前首頁固定後，面板提供再次編輯按鈕](media/homepage-desktop-saved.jpg)
+
+**固定儲存：** 選框隱藏，點擊**再次編輯**即可繼續調整。儲存後重新整理及取消編輯均在瀏覽器中核驗。
+
+</details>
+
+### 行動版：實際響應式首頁
+
+<p>
+  <img src="media/homepage-mobile-drag.jpg" alt="目前手機首頁標題向右向下各拖曳10px後的真實編輯介面" width="280">
+  <img src="media/homepage-mobile-saved.jpg" alt="目前手機首頁置中並固定後，面板提供再次編輯" width="280">
 </p>
 
-**選取 → 拖曳 → 置中 → 固定。** 手機面板會顯示所選元素與畫布中軸的距離，提供**水平置中**及**固定目前版面**按鈕。圖中是開發工具裡的固定手機畫布。
+**左圖：** 真實 **390 × 844瀏覽器視窗**中，標題向右、向下各拖曳10 px。**右圖：** 置中並固定後，提供**再次編輯**入口。直接使用首頁響應式版面，已移除舊的固定手機畫布外框。
 
-這兩張是開發 SkillGuide 首頁時的真實截圖，也是這個 Skill 的需求來源。它們展示最初的首頁編輯器；可重用 Skill 的完整對齊、圖層與再次編輯要求見下文。後續詳細頁的實際測試另記於[驗證文件](docs/validation.md)。截圖展示開發過程，不代表公開網站已開放編輯器。
+截圖來自 **2026年9月8日執行中的 SkillGuide 開發首頁**。編輯器整合至既有原始碼，頁面與面板皆為真實介面，沒有生成或合成UI。桌面與手機版面分別儲存；玻璃方塊保留首頁原生3D互動，版面面板編輯已登記的頁面元素。[查看具體實測範圍](docs/validation.md)。
 
 ## 開始使用
 

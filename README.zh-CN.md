@@ -21,19 +21,33 @@
 
 ## 用 SkillGuide 首页举例
 
-[![SkillGuide 首页：元素编辑虚线框与桌面布局面板](media/homepage-desktop.png)](media/homepage-desktop.png)
+[![当前 SkillGuide 首页接入真实布局编辑器，标题拖动后的实际界面](media/homepage-desktop-drag.jpg)](media/homepage-desktop-drag.jpg)
 
-**桌面端：直接调整首页。** 首屏标题、副标题、按钮和装饰元素都显示了编辑框。右侧面板提供**固定当前布局、复制坐标、恢复默认**；背景网格用于对齐参考。[打开原始截图](media/homepage-desktop.png)。
+**桌面端：直接移动当前首页标题。** 图中标题通过真实鼠标操作**向右、向下各移动10 px**，选框和面板坐标同步变化。导航、字体、玻璃动效和按钮均来自当前开发页面。
 
-### 移动端：在390 × 844画布中居中
+<details>
+<summary>标题居中，再固定保存与再次编辑</summary>
 
-<p align="center">
-  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide 首页390×844手机画布，面板提供水平居中和固定当前布局" width="420"></a>
+![当前首页标题水平居中后的真实界面](media/homepage-desktop-align.jpg)
+
+**水平居中：** 实测中轴偏差变为 **0 px**，纵向偏移保持10 px。
+
+![当前首页固定后，面板提供再次编辑按钮](media/homepage-desktop-saved.jpg)
+
+**固定保存：** 选框隐藏，点击**再次编辑**即可继续调整。保存刷新和取消编辑均在浏览器中核验。
+
+</details>
+
+### 移动端：实际响应式首页
+
+<p>
+  <img src="media/homepage-mobile-drag.jpg" alt="当前手机首页标题向右向下各拖动10px后的真实编辑界面" width="280">
+  <img src="media/homepage-mobile-saved.jpg" alt="当前手机首页居中并固定后，面板提供再次编辑" width="280">
 </p>
 
-**选中 → 拖动 → 居中 → 固定。** 手机面板会显示选中元素与画布中轴的距离，提供**水平居中**和**固定当前布局**按钮。图中是开发工具里的固定手机画布。
+**左图：** 真实 **390 × 844浏览器视口**中，标题向右、向下各拖动10 px。**右图：** 居中并固定后，提供**再次编辑**入口。直接使用首页响应式布局，已去掉旧的固定手机画布外壳。
 
-这两张是开发 SkillGuide 首页时的真实截图，也是这个 Skill 的需求来源。它们展示最初的首页编辑器；可复用 Skill 的完整对齐、图层和再次编辑要求见下文。后续详情页的实际测试另记于[验证文档](docs/validation.md)。截图展示开发过程，不表示公开网站已经开放编辑器。
+截图来自 **2026年9月8日运行中的 SkillGuide 开发首页**。编辑器接入现有源码，页面和面板都是真实运行界面，没有生成或拼接UI。桌面与手机布局分别保存；玻璃方块保留首页原生3D交互，布局面板编辑已登记的页面元素。[查看具体实测范围](docs/validation.md)。
 
 ## 开始使用
 

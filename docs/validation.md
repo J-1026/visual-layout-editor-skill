@@ -23,8 +23,23 @@ This document describes the actual SkillGuide **source pack detail-page** trial.
 
 The screenshot is a real development-page capture. Neither the screenshot nor these checks imply the editor has been deployed to the public SkillGuide website.
 
-## Homepage showcase
+## Current homepage integration — September 8, 2026
 
-The README homepage images are original development screenshots supplied by the project owner: desktop captured on 2026-09-01, and a fixed 390 × 844 mobile canvas captured on 2026-09-02. They were copied unchanged. The mobile image itself is 750 × 983 and includes the development canvas wrapper; it is not a physical-device capture. These images illustrate the skill’s origin and visible editor controls, not a new execution of the tests above.
+The showcase now uses the running development homepage and its existing responsive design, with the same editor runtime integrated into the homepage source. The September 1/2 reference screenshots were rejected as outdated and removed from the active showcase.
 
-The original detail-page captures remain available as supporting evidence: [desktop drag](../media/desktop-drag.jpg), [desktop center](../media/desktop-align.jpg), [mobile drag](../media/mobile-drag.jpg), [mobile saved](../media/mobile-saved.jpg).
+| Homepage check | Observed result |
+| --- | --- |
+| Published desktop drag capture | 1280 × 720 viewport; title moved from (161, 204.5) to (171, 214.5), a real +10/+10 px pointer drag. |
+| Horizontal center | Title x became 160; center error 0 px; y remained 214.5. |
+| Save / refresh / re-edit | A +30/+20 test was centered and saved; title geometry survived refresh and the re-edit control reopened the editor. |
+| Mobile drag | 390 × 844 viewport; title moved from (20, 184) to (30, 194). |
+| Mobile center / save / refresh | x became 20, y stayed 194; saved position survived refresh, with editing outlines hidden. |
+| Breakpoint isolation | Returning from mobile restored the separately saved desktop offsets. |
+| Normal page | With no editor query, no editor was mounted; the title matched its baseline geometry. |
+| Existing layout transforms | Computed CSS translation is preserved when adding an editor offset; original inline styles are restored on disposal. |
+
+The homepage's glass objects retain their native 3D interaction; independent WebGL object ordering is not controlled by this DOM layout panel. Homepage layer-order, every alignment command, physical-device touch, and storage-failure paths were not retested here. The earlier detail-page tests above remain separate evidence.
+
+Runtime syntax and whitespace checks passed. Full TypeScript output matched the previous development baseline after path normalization; existing unrelated errors remain. No website deployment was performed.
+
+The new images are uncomposited browser viewport captures. The full-page export from this browser produced duplicate regions and was excluded. Original detail-page captures remain available as supporting evidence: [desktop drag](../media/desktop-drag.jpg), [desktop center](../media/desktop-align.jpg), [mobile drag](../media/mobile-drag.jpg), [mobile saved](../media/mobile-saved.jpg).

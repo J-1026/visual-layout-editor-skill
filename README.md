@@ -21,19 +21,33 @@ Visual Layout Editor turns that development workflow into a reusable skill. You 
 
 ## See it on the SkillGuide homepage
 
-[![SkillGuide homepage with outlined editable elements and the desktop layout panel](media/homepage-desktop.png)](media/homepage-desktop.png)
+[![Current SkillGuide homepage with the real layout editor after dragging the title](media/homepage-desktop-drag.jpg)](media/homepage-desktop-drag.jpg)
 
-**Desktop — arrange the homepage itself.** The hero heading, subtitle, buttons and decorative objects have editing outlines. The panel on the right offers **Save layout**, **Copy coordinates** and **Reset**. The background grid provides alignment references. [Open the original screenshot](media/homepage-desktop.png).
+**Desktop — move the real homepage title.** In this browser capture, the heading was dragged **10 px right and 10 px down**. Its selection outline and the panel's coordinates reflect the actual movement. The navigation, typography, glass animation and buttons come from the current development page.
 
-### Mobile — center elements in a 390 × 844 canvas
+<details>
+<summary>Center the title, then save and re-edit</summary>
 
-<p align="center">
-  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide homepage in a 390 by 844 mobile canvas, with horizontal center and save layout controls" width="420"></a>
+![Current homepage title aligned to the canvas center](media/homepage-desktop-align.jpg)
+
+**Horizontal center:** the measured center error becomes **0 px**, while the vertical offset stays at 10 px.
+
+![Current homepage after saving, with the re-edit control](media/homepage-desktop-saved.jpg)
+
+**Save:** the selection outlines disappear and **Re-edit** opens the saved layout again. Save/refresh and cancel were checked in the browser.
+
+</details>
+
+### Mobile — the actual responsive homepage
+
+<p>
+  <img src="media/homepage-mobile-drag.jpg" alt="Current mobile homepage after dragging its title 10 pixels right and down" width="280">
+  <img src="media/homepage-mobile-saved.jpg" alt="Current mobile homepage after centering and saving, with the re-edit button" width="280">
 </p>
 
-**Select → drag → center → save.** The mobile panel shows the selected element's distance from the canvas center, with a **Horizontal center** action and **Save layout** button. The screenshot shows the development tool surrounding a fixed mobile canvas.
+**Left:** a real **390 × 844 browser viewport**, after dragging the title 10 px right and down. **Right:** after centering and saving, the editor offers **Re-edit**. This uses the page's responsive layout, without the old fixed-phone-canvas wrapper.
 
-These are real screenshots from developing the SkillGuide homepage—the workflow that inspired this skill. They show the original homepage editor; the reusable skill's fuller alignment, layer and re-edit requirements are described below. The [separate integration checks](docs/validation.md) document the later detail-page trial. The screenshots are development examples, not a claim that the editor is available on the public website.
+These screenshots were captured from the running SkillGuide development homepage on **September 8, 2026**. The existing editor was integrated into its source; no UI was generated or composited. Desktop and mobile layouts save separately. The glass objects retain the homepage's native 3D interaction; the layout panel edits the registered page elements. [See the exact validation scope](docs/validation.md).
 
 ## Get started
 
