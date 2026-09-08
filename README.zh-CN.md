@@ -11,7 +11,7 @@
 
 它来自我们开发 **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** 时的实际需求。SkillGuide 是我们正在做的 AI Skills、MCP 与 Plugins 发现网站。
 
-**[下载安装包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真实演示](#用-skillguide-首页举例)** · **[逛逛 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
+**[下载安装包](https://github.com/J-1026/visual-layout-editor-skill/releases/latest)** · **[查看真实演示](#用-skillguide-首页举例)** · **[逛逛 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
 ## 为什么做这个 Skill
 
@@ -21,26 +21,21 @@
 
 ## 用 SkillGuide 首页举例
 
-[![SkillGuide实际首页编辑状态：完整首屏、选中标题、对齐参考线和侧边完整编辑面板](media/homepage-editing-overview.jpg)](media/homepage-editing-overview.jpg)
+### Web 端：直接调整真实页面
 
-**编辑时，页面元素完整露出。** 蓝色框表示选中的标题，虚线框标记可编辑元素，竖线表示画布中轴。完整面板放在首页旁边，和首屏画布间隔 **211.5 px**；对齐、图层、撤销及固定布局按钮都可见，不压住页面内容。
+[![SkillGuide桌面首页编辑状态：元素虚线框、中轴参考线和首屏旁的编辑面板](media/homepage-desktop-editing.png)](media/homepage-desktop-editing.png)
 
-这张图于2026年9月8日直接从 Chrome 的 **2495 × 1138** 视口截取，展示当前开发首页的**真实编辑状态**，保留现有样式。[查看包含页尾的完整长截图](media/homepage-editing-full-page.jpg)。
+直接拖动首页中带虚线框的元素，使用右侧面板进行边缘对齐、居中、等距排列、图层排序、撤销和保存。调整过程中保留页面现有样式。
 
-<details>
-<summary>实际操作：拖动标题，再水平居中</summary>
+### 移动端：单独调整手机布局
 
-![首页真实编辑状态，标题向右向下各拖动10px](media/homepage-editing-drag.jpg)
+<a href="media/homepage-mobile-editing.png"><img src="media/homepage-mobile-editing.png" alt="SkillGuide移动端首页编辑状态：手机画布与可滚动的编辑面板" width="440"></a>
 
-**拖动：** 标题向右、向下各移动10 px，面板显示 x 10、y 10。
+同一首页适配手机视口，编辑面板可滚动查看其余控件。手机布局与桌面布局分别保存，调整一端不会覆盖另一端。
 
-![标题水平居中后，首页仍保持编辑状态](media/homepage-editing-aligned.jpg)
+两张图由 SkillGuide 创作者于2026年9月8日亲自截取，按原始 PNG 上传：**桌面版1898 × 1124，移动版440 × 956**。点击图片可查看原图。
 
-**居中：** 实测中轴偏差变为0 px，y保持10。两张图都保留选框、参考线和完整编辑面板。
-
-</details>
-
-这个 Skill 来自开发 SkillGuide 的实际工作。桌面与手机布局可以分别保存；玻璃方块保留首页原生3D交互，面板编辑已登记的页面元素。[查看实测范围和限制](docs/validation.md)。
+这个 Skill 来自开发 [SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor) 的实际工作。玻璃方块保留首页原生3D交互，面板编辑已登记的页面元素。[查看实测范围和限制](docs/validation.md)。
 
 ## 开始使用
 
@@ -49,10 +44,10 @@
 在项目中运行 [Skills CLI](https://github.com/vercel-labs/skills) 命令，并选择你的编程 Agent：
 
 ```bash
-npx skills add j19881026/visual-layout-editor-skill --skill visual-layout-editor
+npx skills add J-1026/visual-layout-editor-skill --skill visual-layout-editor
 ```
 
-也可以直接下载 **[Skill ZIP](https://github.com/j19881026/visual-layout-editor-skill/releases/latest/download/visual-layout-editor-multilingual.zip)**，把其中的 `visual-layout-editor` 文件夹复制到 Agent 的技能目录。Codex 通常使用 `~/.codex/skills`；配置了 `CODEX_HOME` 时使用其 `skills` 子目录。替换旧版前先备份；当前会话未识别时，新开会话调用。
+也可以直接下载 **[Skill ZIP](https://github.com/J-1026/visual-layout-editor-skill/releases/latest/download/visual-layout-editor-multilingual.zip)**，把其中的 `visual-layout-editor` 文件夹复制到 Agent 的技能目录。Codex 通常使用 `~/.codex/skills`；配置了 `CODEX_HOME` 时使用其 `skills` 子目录。替换旧版前先备份；当前会话未识别时，新开会话调用。
 
 ### 2. 指定你正在开发的页面
 
@@ -97,7 +92,7 @@ Agent 找到当前源码页面并复用已有组件接入编辑器。你在真�
 
 **[打开 SkillGuide →](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** · [发现 Skills](https://skillguide.ai/zh/skills) · [查看技能包](https://skillguide.ai/zh/packs)
 
-如果对你有帮助，欢迎 Star；接入时遇到问题，可以[提交 Issue](https://github.com/j19881026/visual-layout-editor-skill/issues)，说明框架、目标区域和期望行为。
+如果对你有帮助，欢迎 Star；接入时遇到问题，可以[提交 Issue](https://github.com/J-1026/visual-layout-editor-skill/issues)，说明框架、目标区域和期望行为。
 
 <details>
 <summary><strong>开发者资料：实现规范与验收路径</strong></summary>

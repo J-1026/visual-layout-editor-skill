@@ -11,7 +11,7 @@ Drag a heading, line up a group of cards, adjust overlapping layers, then save a
 
 Built while developing **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**, our directory for discovering AI Skills, MCP servers and plugins.
 
-**[Download the Skill](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[See the example](#see-it-on-the-skillguide-homepage)** · **[Explore SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
+**[Download the Skill](https://github.com/J-1026/visual-layout-editor-skill/releases/latest)** · **[See the example](#see-it-on-the-skillguide-homepage)** · **[Explore SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
 ## Why we made it
 
@@ -21,26 +21,21 @@ Visual Layout Editor turns that development workflow into a reusable skill. You 
 
 ## See it on the SkillGuide homepage
 
-[![Actual SkillGuide homepage in edit mode: full hero, selected title, alignment guides and complete controls alongside the page](media/homepage-editing-overview.jpg)](media/homepage-editing-overview.jpg)
+### Desktop — arrange the real page
 
-**The homepage stays visible while you edit.** The selected heading has a blue outline; dotted boxes mark the editable elements and a vertical guide marks the canvas center. The complete panel sits beside the hero, with a **211.5 px gap** from the canvas. Its alignment, layer, undo and save controls are visible without covering the page.
+[![SkillGuide desktop homepage in edit mode, with element outlines, a center guide and the editing panel beside the hero](media/homepage-desktop-editing.png)](media/homepage-desktop-editing.png)
 
-Captured directly in Chrome at **2495 × 1138** on September 8, 2026. This is the running development homepage in **edit mode**, using its existing design. [Open the full-page screenshot, including the footer](media/homepage-editing-full-page.jpg).
+Drag the outlined elements directly on the homepage. The side panel provides edge and center alignment, equal spacing, layer ordering, undo and save controls. The page keeps its existing design throughout editing.
 
-<details>
-<summary>Real interaction: drag the title, then center it</summary>
+### Mobile — adjust its layout separately
 
-![Homepage in edit mode after a real 10px right and down drag](media/homepage-editing-drag.jpg)
+<a href="media/homepage-mobile-editing.png"><img src="media/homepage-mobile-editing.png" alt="SkillGuide mobile homepage in edit mode, with the mobile canvas and scrollable editing panel" width="440"></a>
 
-**Drag:** the title moved 10 px right and down; the panel shows x 10, y 10.
+The same homepage adapts to a phone viewport. Its editing panel scrolls to expose the controls, and mobile layout changes are stored separately from desktop changes.
 
-![Homepage still in edit mode after horizontal alignment](media/homepage-editing-aligned.jpg)
+Both screenshots were captured by the SkillGuide creator on September 8, 2026 and are published as the original PNG files: **1898 × 1124 desktop** and **440 × 956 mobile**. Click either image to open the original.
 
-**Center:** the measured center error becomes 0 px; y stays at 10. Both images retain the selection, guides and full editing panel.
-
-</details>
-
-The skill came from this development workflow at SkillGuide. Desktop and mobile layouts can save separately. The homepage's glass objects retain their native 3D interaction; the panel edits registered page elements. [Read the validation scope](docs/validation.md) for tested behavior and limits.
+Built while developing [SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor). The homepage's glass objects retain their native 3D interaction; the panel edits registered page elements. [Read the validation scope](docs/validation.md) for tested behavior and limits.
 
 ## Get started
 
@@ -49,10 +44,10 @@ The skill came from this development workflow at SkillGuide. Desktop and mobile 
 With the [Skills CLI](https://github.com/vercel-labs/skills), run this from your project and choose your coding agent:
 
 ```bash
-npx skills add j19881026/visual-layout-editor-skill --skill visual-layout-editor
+npx skills add J-1026/visual-layout-editor-skill --skill visual-layout-editor
 ```
 
-Prefer a download? Get the **[installable ZIP](https://github.com/j19881026/visual-layout-editor-skill/releases/latest/download/visual-layout-editor-multilingual.zip)** and copy its `visual-layout-editor` folder into your agent's skills directory. For Codex, this is normally `~/.codex/skills`, or the `skills` directory under your configured `CODEX_HOME`. Back up an existing copy before replacement. Start a new agent session if it has not discovered the skill.
+Prefer a download? Get the **[installable ZIP](https://github.com/J-1026/visual-layout-editor-skill/releases/latest/download/visual-layout-editor-multilingual.zip)** and copy its `visual-layout-editor` folder into your agent's skills directory. For Codex, this is normally `~/.codex/skills`, or the `skills` directory under your configured `CODEX_HOME`. Back up an existing copy before replacement. Start a new agent session if it has not discovered the skill.
 
 ### 2. Point it at the page you are building
 
@@ -99,7 +94,7 @@ We are building **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medi
 
 **[Explore SkillGuide →](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** · [Browse Skills](https://skillguide.ai/en/skills) · [Browse skill packs](https://skillguide.ai/en/packs)
 
-If this workflow helps, star the repository or [share an integration issue](https://github.com/j19881026/visual-layout-editor-skill/issues). Include your framework, the target region and the behavior you expected.
+If this workflow helps, star the repository or [share an integration issue](https://github.com/J-1026/visual-layout-editor-skill/issues). Include your framework, the target region and the behavior you expected.
 
 <details>
 <summary><strong>For contributors: implementation and acceptance</strong></summary>

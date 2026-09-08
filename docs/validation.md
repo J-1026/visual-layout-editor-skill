@@ -44,8 +44,12 @@ Runtime syntax and whitespace checks passed. Full TypeScript output matched the 
 
 The new images are uncomposited browser viewport captures. The full-page export from this browser produced duplicate regions and was excluded. Original detail-page captures remain available as supporting evidence: [desktop drag](../media/desktop-drag.jpg), [desktop center](../media/desktop-align.jpg), [mobile drag](../media/mobile-drag.jpg), [mobile saved](../media/mobile-saved.jpg).
 
-## Unobstructed editing showcase
+## Earlier unobstructed editing captures (historical)
 
-The active README images were recaptured in Chrome at its natural 2495 × 1138 viewport. The hero canvas spans x 527.5–1967.5; the editor starts at x 2179, leaving a 211.5 px gap. The whole panel, including Save, is inside the viewport. The homepage remains in edit mode, with an active title selection, element outlines and the center guide. A real +10/+10 drag and horizontal center (error 0 px, y retained) were recaptured in this same layout. No source, CSS, or screenshot compositing was used for this revision.
+The earlier README images were recaptured in Chrome at its natural 2495 × 1138 viewport. The hero canvas spans x 527.5–1967.5; the editor starts at x 2179, leaving a 211.5 px gap. The whole panel, including Save, is inside the viewport. The homepage remains in edit mode, with an active title selection, element outlines and the center guide. A real +10/+10 drag and horizontal center (error 0 px, y retained) were recaptured in this same layout. No source, CSS, or screenshot compositing was used for this revision.
 
-The new Chrome full-page export was visually checked from header to footer and has no repeated capture bands. It supersedes the earlier failed in-app-browser full-page export. Narrow/overlaid mobile and saved-preview screenshots are no longer used in the README showcase; earlier mobile and persistence evidence remains historical validation, not the current presentation standard.
+The new Chrome full-page export was visually checked from header to footer and has no repeated capture bands. It supersedes the earlier failed in-app-browser full-page export. These earlier captures are retained as historical evidence and are no longer the README showcase.
+
+## Current showcase — creator-provided originals
+
+The README now uses two original PNG screenshots supplied by the SkillGuide creator on September 8, 2026: desktop 1898 × 1124 and mobile 440 × 956. The files were copied byte-for-byte, without cropping, scaling, retouching or image generation. Both show the real homepage in edit mode. The desktop panel is beside the hero; the mobile panel is scrollable and only part of its controls is visible. Neither image claims a selected element or a measured drag result. The interaction checks above remain separate historical evidence; these screenshots add no new test or deployment claims.
