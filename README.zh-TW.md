@@ -1,51 +1,127 @@
+<p align="center">
+  <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a>
+</p>
+
+
 # 開發中頁面版面編輯器
 
-[English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md)
+**Agent 把頁面做出來，你把元素放到合適的位置。**
 
-**讓正在開發的前端頁面，可以親手拖曳、對齊與儲存版面。**
+拖曳標題、對齊卡片、調整遮擋順序，儲存後還能繼續編輯。這個 Skill 讓程式開發 Agent 將這些能力加入**你正在開發的真實前端專案**。
 
-這是一個 Agent Skill：讓程式開發 Agent 在目前專案的真實原始碼頁面中加入版面編輯控制項。你親自擺放元素，Agent 負責整合、驗證與可靠儲存。
+它來自我們開發 **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** 時的實際需求。SkillGuide 是我們正在打造的 AI Skills、MCP 與 Plugins 探索網站。
 
-![SkillGuide 真實開發頁面完整截圖](media/skillguide-full-page.png)
+**[下載安裝包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真實示範](#在真實專案中使用)** · **[探索 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
-## 功能範圍
+## 為什麼做這個 Skill
 
-- 拖曳已登記的文字、按鈕、圖片、裝飾及容器，輸入 x/y 微調。
-- 相對指定區域置中，或讓多個元素互相對齊、等距排列。
-- 在有效圖層範圍內上移、下移、移至最上層或最下層，選取被遮住的物件。
-- 固定儲存、重新整理後還原、再次編輯、取消、復原與重做、匯出版面 JSON。
-- 桌面與手機版面分別儲存；可要求控制項使用繁中、英文或簡中。
+開發 SkillGuide 時，最後一點版面調整常常變成新一輪提示詞：標題挪一下、按鈕置中、卡片放到上層。我們希望直接在頁面上擺好位置，再把確認結果交給 Agent。
 
-## 使用邊界
+於是把這套開發方式整理成了 Visual Layout Editor：你決定如何擺放，Agent 負責原始碼整合、儲存與驗證。
 
-必須是**目前正在開發、可修改原始碼的專案頁面**。預覽網址只是定位專案，不能任意貼一個網址就編輯。這不是瀏覽器擴充功能或線上拖曳平台；安裝 Skill 後，Agent 仍需在指定頁面的原始碼中完成整合。
+## 在真實專案中使用
 
-「固定目前版面」不等於寫入原始碼、部署上線或跨裝置同步。你確認結果後，可以另外要求 Agent 將版面整合進原始碼。
+[![SkillGuide 技能包詳細頁：可編輯區域與版面控制面板](media/desktop-drag.jpg)](media/desktop-drag.jpg)
 
-## 安裝
+**桌面端：直接拖曳真實元素。** 標題透過真實滑鼠操作向右移動40 px、向下20 px；藍色選框與右側 x/y 數值對應這次變化。[查看完整長截圖](media/skillguide-full-page.png)。
 
-在 GitHub 下載儲存庫 ZIP，將其中的 **`skills/visual-layout-editor` 資料夾**放入 Agent 的技能目錄。Codex 預設為 `~/.codex/skills`；若設定了 `CODEX_HOME`，使用其 `skills` 子目錄。保留資料夾名稱 `visual-layout-editor`，更新前先備份同名版本。若目前工作階段未辨識，新開工作階段並依名稱呼叫。
+<details>
+<summary>桌面端：拖曳後，一鍵水平置中</summary>
 
-其他 Agent 的安裝路徑及辨識機制可能不同，尚未逐一驗證跨 Agent 相容性。
+![桌面端水平置中後的真實截圖](media/desktop-align.jpg)
 
-## 呼叫範例
+點擊水平置中後，x 從40變為85，y 維持20，區域中軸偏差變成0 px。這是實際瀏覽器截圖。
 
-開啟正在開發的專案，再告訴 Agent：
+</details>
 
-> 使用 $visual-layout-editor，在目前開發的技能包詳細頁加入版面編輯。標題、來源資訊與成員卡片都能拖曳，可以互相對齊、調整圖層、固定儲存與再次編輯。控制項使用繁體中文，開啟真實預覽讓我親自調整。
+### 行動版：調整後固定儲存
 
-也可以指定首頁首屏、詳細頁區域或一組卡片。Agent 先重用既有元件加入編輯器，再由你調整；需要寫入原始碼時另行提出。
+<p>
+  <img src="media/mobile-drag.jpg" alt="行動版實際拖曳後x與y均為10，下方是對齊面板" width="280">
+  <img src="media/mobile-saved.jpg" alt="行動版固定後的預覽，選框消失並提供再次編輯按鈕" width="280">
+</p>
 
-## 實測與限制
+**左圖：** 同一專案在390 × 844真實瀏覽器視窗中，標題向右、向下各拖曳10 px。**右圖：** 固定儲存後選框消失，保留「再次編輯」入口。此處展示響應式介面，不冒充手機實機觸控測試。
 
-截圖是 SkillGuide 真實開發中的技能包詳細頁，共35個可選物件。Chrome 已實際驗證拖曳、區域置中、關鍵元素對齊、同父層遮擋順序、儲存後重新整理、再次編輯與取消，以及桌面和手機斷點的儲存隔離。
 
-本次試用的圖層排序限同一父層，跨父層尚未實作。真實觸控硬體、儲存異常與衝突還原、JSON 實際下載尚未驗證。Skill 的驗收規格不代表每個專案都已完成實測。
+| 圖中位置 | 對應操作 |
+| --- | --- |
+| **頁面內容虛線框** | 選取標題、來源資訊與成員卡片，拖曳或輸入 x/y 微調。 |
+| **對齊控制區** | 相對區域置中，或讓多個物件對齊標記的關鍵元素。 |
+| **元素清單與圖層** | 選取被遮住的物件，在支援的範圍內調整前後順序。 |
+| **固定與再次編輯** | 儲存版面，重新整理後還原，需要時再次開啟調整。 |
 
-發行包包含 Skill 指令及參考規格，不包含 SkillGuide 網站原始碼或獨立編輯器執行程式。多語言指文件及可要求的控制項語言，不會自動翻譯網頁業務內容。
+這個實例登記了 **35 個物件**，已驗證的圖層排序範圍是同一父層。桌面與手機版面分別儲存。截圖使用中文頁面，Skill 可整合到其他語言的開發專案。
 
-[完整 Skill](skills/visual-layout-editor/SKILL.md) · [英文互動規格](skills/visual-layout-editor/references/implementation.md) · [英文驗收路徑](skills/visual-layout-editor/references/acceptance.md)
+## 開始使用
+
+### 1. 安裝 Skill
+
+在專案中執行 [Skills CLI](https://github.com/vercel-labs/skills) 指令，選擇你的程式開發 Agent：
+
+```bash
+npx skills add j19881026/visual-layout-editor-skill --skill visual-layout-editor
+```
+
+也可以直接下載 **[Skill ZIP](https://github.com/j19881026/visual-layout-editor-skill/releases/latest/download/visual-layout-editor-multilingual.zip)**，把 `visual-layout-editor` 資料夾複製到 Agent 技能目錄。Codex 通常使用 `~/.codex/skills`；設定 `CODEX_HOME` 時使用其 `skills` 子目錄。替換前先備份舊版；目前工作階段未辨識時，開啟新的工作階段呼叫。
+
+### 2. 指定正在開發的頁面
+
+開啟專案原始碼後，告訴 Agent：
+
+```text
+使用 $visual-layout-editor，在目前開發的詳細頁加入版面編輯。
+標題、來源資訊與成員卡片可以拖曳，支援相互對齊、圖層排序、
+固定儲存與再次編輯。保留既有設計，控制項使用繁體中文。
+開啟真實預覽，讓我親自調整。
+```
+
+### 3. 擺放 → 儲存 → 繼續調整
+
+Agent 找到目前原始碼頁面並重用既有元件加入編輯器。你在真實預覽中擺放、固定儲存，需要時再次編輯。確認結果後，再要求 Agent 將版面寫入原始碼。
+
+## 能力一覽
+
+| 你的需求 | Skill 指導 Agent 實作 |
+| --- | --- |
+| 精確調整位置 | 拖曳、數值位移、方向鍵、參考線與鎖定。 |
+| 讓元素對齊 | 六種邊緣/置中指令、關鍵元素或選區參照、等距排列。 |
+| 改變遮擋關係 | 上移、下移、最上層、最下層，明確顯示圖層限制。 |
+| 反覆嘗試方案 | 草稿與固定版本、復原重做、取消、重設、JSON 匯出。 |
+| 調整手機與桌面 | 各斷點分別儲存，避免互相覆蓋。 |
+
+## 使用前須知
+
+**必須有目前專案與可修改的頁面原始碼。** 這是 Agent Skill，由 Agent 在原始碼中加入控制項，不是讓任意網址都可編輯的瀏覽器擴充功能或線上平台。
+
+| 操作 | 實際含義 |
+| --- | --- |
+| **固定儲存** | 儲存到編輯器設定的儲存空間；本機瀏覽器儲存屬於該瀏覽器與同一來源。 |
+| **寫入原始碼** | 另行要求 Agent 將確認的版面寫入專案 CSS 或設定。 |
+| **部署上線** | 遵循專案既有發布流程。 |
+
+儲存庫提供指令與參考規格，不包含獨立編輯器執行程式。目前試用通過拖曳、對齊、同父層圖層與持久化等核心路徑，尚未驗證全部要求或所有 Agent。**[查看實測範圍與限制](docs/validation.md)**。
+
+## 來自 SkillGuide
+
+我們正在打造 **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**：協助你發現 AI Skills、MCP 與 Plugins，並找到它們的原始出處。這個 Skill 就是從網站開發中整理出來的。
+
+**[開啟 SkillGuide →](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** · [探索 Skills](https://skillguide.ai/zh/skills) · [查看技能包](https://skillguide.ai/zh/packs)
+
+如果對你有幫助，歡迎 Star；整合時遇到問題，可以[提出 Issue](https://github.com/j19881026/visual-layout-editor-skill/issues)，說明框架、目標區域與預期行為。
+
+<details>
+<summary><strong>開發者資料：實作規格與驗收路徑</strong></summary>
+
+- [Skill 入口](skills/visual-layout-editor/SKILL.md)
+- [英文互動與儲存規格](skills/visual-layout-editor/references/implementation.md)
+- [真實瀏覽器驗收](skills/visual-layout-editor/references/acceptance.md)
+- [簡體中文原始規格](docs/zh-CN/SKILL.md)
+
+保留原頁面的設計與業務行為；檢查實際座標、遮擋、儲存後重新整理及再次編輯，不能只憑選單文案驗收。
+
+</details>
 
 ## 授權
 
-Skill 指令與參考規格採用 [MIT License](LICENSE)。範例截圖及其中第三方文字、商標、頭像等保留各自權利，不在此授權範圍內。
+Skill 指令與參考規格使用 [MIT](LICENSE)。截圖與第三方內容保留各自權利，不在此授權範圍內。
