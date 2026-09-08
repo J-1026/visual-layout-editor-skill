@@ -43,3 +43,9 @@ The homepage's glass objects retain their native 3D interaction; independent Web
 Runtime syntax and whitespace checks passed. Full TypeScript output matched the previous development baseline after path normalization; existing unrelated errors remain. No website deployment was performed.
 
 The new images are uncomposited browser viewport captures. The full-page export from this browser produced duplicate regions and was excluded. Original detail-page captures remain available as supporting evidence: [desktop drag](../media/desktop-drag.jpg), [desktop center](../media/desktop-align.jpg), [mobile drag](../media/mobile-drag.jpg), [mobile saved](../media/mobile-saved.jpg).
+
+## Unobstructed editing showcase
+
+The active README images were recaptured in Chrome at its natural 2495 × 1138 viewport. The hero canvas spans x 527.5–1967.5; the editor starts at x 2179, leaving a 211.5 px gap. The whole panel, including Save, is inside the viewport. The homepage remains in edit mode, with an active title selection, element outlines and the center guide. A real +10/+10 drag and horizontal center (error 0 px, y retained) were recaptured in this same layout. No source, CSS, or screenshot compositing was used for this revision.
+
+The new Chrome full-page export was visually checked from header to footer and has no repeated capture bands. It supersedes the earlier failed in-app-browser full-page export. Narrow/overlaid mobile and saved-preview screenshots are no longer used in the README showcase; earlier mobile and persistence evidence remains historical validation, not the current presentation standard.
