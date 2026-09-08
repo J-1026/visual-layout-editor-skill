@@ -11,7 +11,7 @@
 
 它来自我们开发 **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** 时的实际需求。SkillGuide 是我们正在做的 AI Skills、MCP 与 Plugins 发现网站。
 
-**[下载安装包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真实演示](#在真实项目中使用)** · **[逛逛 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
+**[下载安装包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真实演示](#用-skillguide-首页举例)** · **[逛逛 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
 ## 为什么做这个 Skill
 
@@ -19,39 +19,21 @@
 
 于是把这套开发方式整理成了 Visual Layout Editor：你决定怎么摆，Agent 负责源码接入、保存和验证。
 
-## 在真实项目中使用
+## 用 SkillGuide 首页举例
 
-[![SkillGuide 技能包详情页：可编辑区域与布局控制面板](media/desktop-drag.jpg)](media/desktop-drag.jpg)
+[![SkillGuide 首页：元素编辑虚线框与桌面布局面板](media/homepage-desktop.png)](media/homepage-desktop.png)
 
-**桌面端：直接拖动真实元素。** 标题通过真实鼠标操作向右移动40 px、向下20 px；蓝色选框与右侧 x/y 数值对应这次变化。[查看完整长截图](media/skillguide-full-page.png)。
+**桌面端：直接调整首页。** 首屏标题、副标题、按钮和装饰元素都显示了编辑框。右侧面板提供**固定当前布局、复制坐标、恢复默认**；背景网格用于对齐参考。[打开原始截图](media/homepage-desktop.png)。
 
-<details>
-<summary>桌面端：拖动后，一键水平居中</summary>
+### 移动端：在390 × 844画布中居中
 
-![桌面端水平居中后的真实截图](media/desktop-align.jpg)
-
-点击水平居中后，x 从40变为85，y 保持20，区域中轴偏差变为0 px。这是实际浏览器截图。
-
-</details>
-
-### 移动端：调整后固定保存
-
-<p>
-  <img src="media/mobile-drag.jpg" alt="移动端实际拖动后x和y均为10，下方为对齐面板" width="280">
-  <img src="media/mobile-saved.jpg" alt="移动端固定后的预览，选框消失并提供再次编辑按钮" width="280">
+<p align="center">
+  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide 首页390×844手机画布，面板提供水平居中和固定当前布局" width="420"></a>
 </p>
 
-**左图：** 同一项目在390 × 844真实浏览器视口中，标题向右、向下各拖动10 px。**右图：** 固定保存后选框消失，保留“再次编辑”入口。这里展示响应式界面，不冒充手机真机触摸测试。
+**选中 → 拖动 → 居中 → 固定。** 手机面板会显示选中元素与画布中轴的距离，提供**水平居中**和**固定当前布局**按钮。图中是开发工具里的固定手机画布。
 
-
-| 图中位置 | 对应操作 |
-| --- | --- |
-| **页面内容虚线框** | 选择标题、来源信息和成员卡片，拖动或输入 x/y 精调。 |
-| **对齐控制区** | 相对区域居中，或让多个对象对齐到标记的关键元素。 |
-| **元素清单与图层** | 选择被遮挡的对象，在支持的图层范围内调整前后顺序。 |
-| **固定与再次编辑** | 保存布局，刷新恢复，需要时再次打开继续调整。 |
-
-这个实例登记了 **35 个对象**，图层排序已验证的范围是同一父级。桌面和手机布局分别保存。截图使用中文页面，Skill 可接入其他语言的开发项目。
+这两张是开发 SkillGuide 首页时的真实截图，也是这个 Skill 的需求来源。它们展示最初的首页编辑器；可复用 Skill 的完整对齐、图层和再次编辑要求见下文。后续详情页的实际测试另记于[验证文档](docs/validation.md)。截图展示开发过程，不表示公开网站已经开放编辑器。
 
 ## 开始使用
 
@@ -70,8 +52,8 @@ npx skills add j19881026/visual-layout-editor-skill --skill visual-layout-editor
 打开项目源码后，对 Agent 说：
 
 ```text
-使用 $visual-layout-editor，在当前开发的详情页接入布局编辑。
-标题、来源信息和成员卡片可以拖动，支持相互对齐、图层排序、
+使用 $visual-layout-editor，在当前开发的首页首屏区域接入布局编辑。
+标题、副标题、按钮和装饰元素可以拖动，支持相互对齐、图层排序、
 固定保存和再次编辑。保留页面现有设计，控件用中文。
 打开真实预览，让我自己调整。
 ```

@@ -1,6 +1,6 @@
 # Validation scope / 实测范围 / 實測範圍
 
-This document describes the actual SkillGuide trial. The skill's acceptance specification is broader than this one integration's completed checks.
+This document describes the actual SkillGuide **source pack detail-page** trial. The skill's acceptance specification is broader than this one integration's completed checks.
 
 | Path | Observed result |
 | --- | --- |
@@ -22,3 +22,9 @@ This document describes the actual SkillGuide trial. The skill's acceptance spec
 **繁體中文：** 上表為 SkillGuide 試用的真實驗證結果，共35個物件。圖層僅驗證同一父層；真機觸控、儲存異常/衝突、JSON 下載、完整對齊/等距路徑及跨 Agent 整合未全部驗證。完整驗收規格不代表本實例已全部通過。
 
 The screenshot is a real development-page capture. Neither the screenshot nor these checks imply the editor has been deployed to the public SkillGuide website.
+
+## Homepage showcase
+
+The README homepage images are original development screenshots supplied by the project owner: desktop captured on 2026-09-01, and a fixed 390 × 844 mobile canvas captured on 2026-09-02. They were copied unchanged. The mobile image itself is 750 × 983 and includes the development canvas wrapper; it is not a physical-device capture. These images illustrate the skill’s origin and visible editor controls, not a new execution of the tests above.
+
+The original detail-page captures remain available as supporting evidence: [desktop drag](../media/desktop-drag.jpg), [desktop center](../media/desktop-align.jpg), [mobile drag](../media/mobile-drag.jpg), [mobile saved](../media/mobile-saved.jpg).

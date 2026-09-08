@@ -11,7 +11,7 @@
 
 它來自我們開發 **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)** 時的實際需求。SkillGuide 是我們正在打造的 AI Skills、MCP 與 Plugins 探索網站。
 
-**[下載安裝包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真實示範](#在真實專案中使用)** · **[探索 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
+**[下載安裝包](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[查看真實示範](#以-skillguide-首頁為例)** · **[探索 SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
 ## 為什麼做這個 Skill
 
@@ -19,39 +19,21 @@
 
 於是把這套開發方式整理成了 Visual Layout Editor：你決定如何擺放，Agent 負責原始碼整合、儲存與驗證。
 
-## 在真實專案中使用
+## 以 SkillGuide 首頁為例
 
-[![SkillGuide 技能包詳細頁：可編輯區域與版面控制面板](media/desktop-drag.jpg)](media/desktop-drag.jpg)
+[![SkillGuide 首頁：元素編輯虛線框與桌面版面控制面板](media/homepage-desktop.png)](media/homepage-desktop.png)
 
-**桌面端：直接拖曳真實元素。** 標題透過真實滑鼠操作向右移動40 px、向下20 px；藍色選框與右側 x/y 數值對應這次變化。[查看完整長截圖](media/skillguide-full-page.png)。
+**桌面端：直接調整首頁。** 首屏標題、副標題、按鈕與裝飾元素都顯示編輯框。右側面板提供**固定目前版面、複製座標、還原預設**；背景網格用於對齊參考。[開啟原始截圖](media/homepage-desktop.png)。
 
-<details>
-<summary>桌面端：拖曳後，一鍵水平置中</summary>
+### 行動版：在390 × 844畫布中置中
 
-![桌面端水平置中後的真實截圖](media/desktop-align.jpg)
-
-點擊水平置中後，x 從40變為85，y 維持20，區域中軸偏差變成0 px。這是實際瀏覽器截圖。
-
-</details>
-
-### 行動版：調整後固定儲存
-
-<p>
-  <img src="media/mobile-drag.jpg" alt="行動版實際拖曳後x與y均為10，下方是對齊面板" width="280">
-  <img src="media/mobile-saved.jpg" alt="行動版固定後的預覽，選框消失並提供再次編輯按鈕" width="280">
+<p align="center">
+  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide 首頁390×844手機畫布，面板提供水平置中與固定目前版面" width="420"></a>
 </p>
 
-**左圖：** 同一專案在390 × 844真實瀏覽器視窗中，標題向右、向下各拖曳10 px。**右圖：** 固定儲存後選框消失，保留「再次編輯」入口。此處展示響應式介面，不冒充手機實機觸控測試。
+**選取 → 拖曳 → 置中 → 固定。** 手機面板會顯示所選元素與畫布中軸的距離，提供**水平置中**及**固定目前版面**按鈕。圖中是開發工具裡的固定手機畫布。
 
-
-| 圖中位置 | 對應操作 |
-| --- | --- |
-| **頁面內容虛線框** | 選取標題、來源資訊與成員卡片，拖曳或輸入 x/y 微調。 |
-| **對齊控制區** | 相對區域置中，或讓多個物件對齊標記的關鍵元素。 |
-| **元素清單與圖層** | 選取被遮住的物件，在支援的範圍內調整前後順序。 |
-| **固定與再次編輯** | 儲存版面，重新整理後還原，需要時再次開啟調整。 |
-
-這個實例登記了 **35 個物件**，已驗證的圖層排序範圍是同一父層。桌面與手機版面分別儲存。截圖使用中文頁面，Skill 可整合到其他語言的開發專案。
+這兩張是開發 SkillGuide 首頁時的真實截圖，也是這個 Skill 的需求來源。它們展示最初的首頁編輯器；可重用 Skill 的完整對齊、圖層與再次編輯要求見下文。後續詳細頁的實際測試另記於[驗證文件](docs/validation.md)。截圖展示開發過程，不代表公開網站已開放編輯器。
 
 ## 開始使用
 
@@ -70,8 +52,8 @@ npx skills add j19881026/visual-layout-editor-skill --skill visual-layout-editor
 開啟專案原始碼後，告訴 Agent：
 
 ```text
-使用 $visual-layout-editor，在目前開發的詳細頁加入版面編輯。
-標題、來源資訊與成員卡片可以拖曳，支援相互對齊、圖層排序、
+使用 $visual-layout-editor，在目前開發的首頁首屏區域加入版面編輯。
+標題、副標題、按鈕與裝飾元素可以拖曳，支援相互對齊、圖層排序、
 固定儲存與再次編輯。保留既有設計，控制項使用繁體中文。
 開啟真實預覽，讓我親自調整。
 ```

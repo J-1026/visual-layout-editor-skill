@@ -11,7 +11,7 @@ Drag a heading, line up a group of cards, adjust overlapping layers, then save a
 
 Built while developing **[SkillGuide](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**, our directory for discovering AI Skills, MCP servers and plugins.
 
-**[Download the Skill](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[See the example](#see-it-in-a-real-project)** · **[Explore SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
+**[Download the Skill](https://github.com/j19881026/visual-layout-editor-skill/releases/latest)** · **[See the example](#see-it-on-the-skillguide-homepage)** · **[Explore SkillGuide ↗](https://skillguide.ai/?utm_source=github&utm_medium=readme&utm_campaign=visual_layout_editor)**
 
 ## Why we made it
 
@@ -19,39 +19,21 @@ While building SkillGuide, small layout adjustments kept turning into another ro
 
 Visual Layout Editor turns that development workflow into a reusable skill. You control the arrangement; the agent handles source integration, persistence and validation.
 
-## See it in a real project
+## See it on the SkillGuide homepage
 
-[![SkillGuide detail-page integration: editable page region and control panel](media/desktop-drag.jpg)](media/desktop-drag.jpg)
+[![SkillGuide homepage with outlined editable elements and the desktop layout panel](media/homepage-desktop.png)](media/homepage-desktop.png)
 
-**Desktop — drag directly on the page.** The selected title was moved 40 px right and 20 px down using real pointer events. Its blue outline and the panel's x/y values show the same change. [Open the full-page capture](media/skillguide-full-page.png).
+**Desktop — arrange the homepage itself.** The hero heading, subtitle, buttons and decorative objects have editing outlines. The panel on the right offers **Save layout**, **Copy coordinates** and **Reset**. The background grid provides alignment references. [Open the original screenshot](media/homepage-desktop.png).
 
-<details>
-<summary>Desktop — align the selected title to the region center</summary>
+### Mobile — center elements in a 390 × 844 canvas
 
-![Desktop horizontal alignment after dragging](media/desktop-align.jpg)
-
-Clicking horizontal center changed x from 40 to 85 while keeping y at 20; the measured region-center offset became 0 px. This is an actual browser capture.
-
-</details>
-
-### Mobile — adjust, then save
-
-<p>
-  <img src="media/mobile-drag.jpg" alt="Mobile editor after a real drag: x 10, y 10, with alignment controls" width="280">
-  <img src="media/mobile-saved.jpg" alt="Mobile saved preview with the re-edit button and selection outlines removed" width="280">
+<p align="center">
+  <a href="media/homepage-mobile.png"><img src="media/homepage-mobile.png" alt="SkillGuide homepage in a 390 by 844 mobile canvas, with horizontal center and save layout controls" width="420"></a>
 </p>
 
-**Left:** the same project at a real 390 × 844 browser viewport, after dragging the title 10 px right and down. **Right:** after saving, selection outlines are hidden and the re-edit button remains available. This captures the responsive UI, not a physical-device touch test.
+**Select → drag → center → save.** The mobile panel shows the selected element's distance from the canvas center, with a **Horizontal center** action and **Save layout** button. The screenshot shows the development tool surrounding a fixed mobile canvas.
 
-
-| What you see | What you can do |
-| --- | --- |
-| **Outlined content region** | Select headings, source information and member cards; drag or enter x/y offsets. |
-| **Alignment controls** | Center within the region, or align multiple objects to a marked key element. |
-| **Element list and layers** | Select covered objects and adjust their order within a supported stacking scope. |
-| **Save and re-edit** | Fix the current layout, refresh, then reopen it for another round of edits. |
-
-This integration registers **35 objects**. Its tested layer controls work within the same parent. Desktop and mobile layouts are saved separately. The screenshot shows a Chinese page; the skill can be used with projects in other languages.
+These are real screenshots from developing the SkillGuide homepage—the workflow that inspired this skill. They show the original homepage editor; the reusable skill's fuller alignment, layer and re-edit requirements are described below. The [separate integration checks](docs/validation.md) document the later detail-page trial. The screenshots are development examples, not a claim that the editor is available on the public website.
 
 ## Get started
 
@@ -70,8 +52,9 @@ Prefer a download? Get the **[installable ZIP](https://github.com/j19881026/visu
 Open that project's source, then ask:
 
 ```text
-Use $visual-layout-editor on the detail page we are developing.
-Make the title, source information and member cards draggable.
+Use $visual-layout-editor on the homepage we are developing.
+Make the hero title, subtitle, buttons and decorative elements draggable
+within the hero region.
 Add element alignment, layer ordering, save and re-edit controls.
 Keep the existing page design. Open the preview so I can arrange it.
 Use English for the editor controls.
